@@ -1,0 +1,111 @@
+{
+  "mcp_overview": {
+    "title": "Model Context Protocol (MCP) Overview",
+    "content": "The Model Context Protocol (MCP) is an open standard that enables secure connections between host applications (like Claude Desktop, IDEs, or other AI tools) and external data sources. MCP allows AI assistants to fetch real-time information, interact with databases, access file systems, and integrate with various services while maintaining security and user control.",
+    "key_points": [
+      "Open standard for AI-data source connections",
+      "Enables real-time data access for AI assistants",
+      "Maintains security through controlled access",
+      "Supports various data sources and services"
+    ]
+  },
+  "mcp_architecture": {
+    "title": "MCP Architecture",
+    "content": "MCP follows a client-server architecture where the host application (client) connects to MCP servers that provide access to specific resources. The protocol uses JSON-RPC for communication and supports both local and remote connections.",
+    "components": [
+      "MCP Client (Host Application): The AI assistant or application that consumes data",
+      "MCP Server: Provides access to specific resources or services",
+      "Transport Layer: Handles communication (stdio, HTTP, WebSocket)",
+      "Protocol Layer: JSON-RPC based messaging"
+    ]
+  },
+  "mcp_capabilities": {
+    "title": "MCP Server Capabilities",
+    "content": "MCP servers can provide various capabilities to enhance AI assistant functionality.",
+    "capabilities": [
+      "Resources: Static or dynamic data that can be read",
+      "Tools: Functions that can be called to perform actions",
+      "Prompts: Reusable prompt templates",
+      "Sampling: Request completions from LLMs"
+    ]
+  },
+  "implementation_patterns": {
+    "title": "Common Implementation Patterns",
+    "content": "Best practices for implementing MCP servers",
+    "patterns": [
+      "Resource-based servers: Provide read-only access to data",
+      "Tool-based servers: Enable action execution",
+      "Hybrid servers: Combine resources and tools",
+      "Proxy servers: Bridge to existing APIs"
+    ]
+  },
+  "security_considerations": {
+    "title": "Security and Best Practices",
+    "content": "MCP emphasizes security through controlled access and user consent.",
+    "practices": [
+      "Explicit user consent for server connections",
+      "Capability-based access control",
+      "Input validation and sanitization",
+      "Rate limiting and resource management",
+      "Secure transport protocols"
+    ]
+  },
+  "common_use_cases": {
+    "title": "Common MCP Use Cases",
+    "content": "Real-world applications of MCP servers",
+    "use_cases": [
+      "Database integration for real-time queries",
+      "File system access for document processing",
+      "API integration for external services",
+      "Development tool integration",
+      "Content management systems",
+      "Data analysis and visualization tools"
+    ]
+  },
+  "troubleshooting": {
+    "title": "Common Issues and Troubleshooting",
+    "content": "Frequent problems and their solutions",
+    "issues": [
+      "Connection failures: Check transport configuration and server status",
+      "Permission errors: Verify user consent and access rights",
+      "Performance issues: Implement caching and optimize queries",
+      "Protocol errors: Validate JSON-RPC message format",
+      "Resource not found: Check resource availability and naming"
+    ]
+  },
+  "development_guide": {
+    "title": "MCP Server Development Guide",
+    "content": "Steps to create your own MCP server",
+    "steps": [
+      "1. Choose a transport method (stdio, HTTP, WebSocket)",
+      "2. Implement the MCP protocol handlers",
+      "3. Define your resources, tools, or prompts",
+      "4. Add proper error handling and validation",
+      "5. Test with MCP clients",
+      "6. Document your server capabilities"
+    ]
+  },
+  "protocol_details": {
+    "title": "Protocol Implementation Details",
+    "content": "Technical details for implementing MCP",
+    "details": [
+      "JSON-RPC 2.0 based messaging",
+      "Bidirectional communication support",
+      "Capability negotiation during handshake",
+      "Resource URI scheme for addressing",
+      "Tool parameter validation",
+      "Progress notifications for long operations"
+    ]
+  },
+  "ecosystem": {
+    "title": "MCP Ecosystem",
+    "content": "Tools and libraries in the MCP ecosystem",
+    "tools": [
+      "Official MCP SDKs for Python, TypeScript",
+      "Community implementations in various languages",
+      "MCP Inspector for debugging and testing",
+      "Example servers and templates",
+      "Integration guides for popular platforms"
+    ]
+  }
+}
