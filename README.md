@@ -103,22 +103,45 @@ Q&A-Chatbot-About-MCP-Servers/
 ├── requirements.txt      # Python dependencies
 ├── .env.example         # Environment variables template
 ├── .env                 # Your actual environment variables (create this)
+├── Procfile              # Render deployment configuration
+├── runtime.txt           # Python version for deployment
+├── .streamlit/           # Streamlit configuration for deployment
+│   └── config.toml
+├── DEPLOYMENT.md         # Detailed deployment guide
 └── README.md           # This file
 ```
+
+## Deployment
+
+### Deploy to Render (Recommended)
+
+This application is ready for deployment on Render. See [`DEPLOYMENT.md`](DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy Steps:**
+1. Push your code to GitHub
+2. Connect your GitHub repo to Render
+3. Set environment variables (especially `OPENAI_API_KEY`)
+4. Deploy!
+
+**Live Demo**: Once deployed, your app will be available at a URL like `https://your-app-name.onrender.com`
+
+### Local Development
+For local development, follow the installation instructions above.
 
 ## Technical Details
 
 ### Architecture
 - **Frontend**: Streamlit web interface
 - **Backend**: OpenAI GPT-3.5-turbo API
-- **Knowledge Base**: JSON-based with semantic search
-- **Embeddings**: Sentence transformers for similarity matching
+- **Knowledge Base**: JSON-based with keyword search
+- **Deployment**: Ready for Render cloud hosting
+- **Search**: Intelligent keyword matching for context retrieval
 
 ### Key Components
 
 1. **MCPKnowledgeBase Class**
    - Loads and manages MCP knowledge
-   - Creates embeddings for semantic search
+   - Performs intelligent keyword search
    - Finds relevant context for questions
 
 2. **MCPChatbot Class**

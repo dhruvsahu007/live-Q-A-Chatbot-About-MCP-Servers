@@ -1,5 +1,6 @@
 # Environment variables
 .env
+*.env
 
 # Python
 __pycache__/
@@ -29,6 +30,7 @@ MANIFEST
 venv/
 env/
 ENV/
+myenv/
 
 # IDEs
 .vscode/
@@ -44,8 +46,13 @@ Thumbs.db
 *.log
 
 # Streamlit
-.streamlit/
+.streamlit/secrets.toml
 
 # Model files (if any)
 *.pkl
 *.joblib
+
+# Local development files
+start.bat
+demo.py
+setup.py

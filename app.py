@@ -85,11 +85,14 @@ def main():
         # API Key status
         st.header("⚙️ Configuration")
         api_key = os.getenv("OPENAI_API_KEY")
-        if api_key and api_key != "your_openai_api_key_here":
+        if api_key and api_key != "your_openai_api_key_here" and len(api_key) > 20:
             st.success("✅ OpenAI API Key configured")
         else:
             st.error("❌ OpenAI API Key not configured")
-            st.info("Please set your API key in the .env file")
+            if os.path.exists(".env"):
+                st.info("Please set your API key in the .env file")
+            else:
+                st.info("Set OPENAI_API_KEY as an environment variable")
     
     # Initialize session state
     if "messages" not in st.session_state:
