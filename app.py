@@ -2,6 +2,10 @@ import streamlit as st
 import os
 from mcp_chatbot import MCPChatbot
 import time
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Page configuration
 st.set_page_config(
